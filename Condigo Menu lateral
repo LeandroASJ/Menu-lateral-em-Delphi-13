@@ -1,0 +1,46 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.ExtCtrls;
+
+type
+  TForm_Principal = class(TForm)
+    pnl_Fundo: TPanel;
+    pnl_menu_lateral: TPanel;
+    SpeedButton6: TSpeedButton;
+    SpeedButton7: TSpeedButton;
+    btn_menu: TSpeedButton;
+    SpeedButton5: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    SpeedButton1: TSpeedButton;
+    Panel1: TPanel;
+    procedure SpeedButton2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form_Principal: TForm_Principal;
+  bExpandido : Boolean;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm_Principal.SpeedButton2Click(Sender: TObject);
+
+
+begin
+  if bExpandido then
+    pnl_menu_lateral.Width := 54
+  else
+    pnl_menu_lateral.Width := 160;
+
+  bExpandido := not bExpandido;
+end;
+end.
